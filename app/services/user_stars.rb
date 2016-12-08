@@ -6,8 +6,8 @@ class UserStars
     @url = attributes[:html_url]
   end
 
-  def self.stars(username)
-    GitHubService.new("", username).get_stars.map do |raw_star|
+  def self.stars(token)
+    GitHubService.new(token).get_stars.map do |raw_star|
       UserStars.new(raw_star)
     end
   end
