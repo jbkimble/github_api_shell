@@ -13,8 +13,8 @@
     <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Overview  <span class="badge"> 4 </span></a></li>
     <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Repositories  <span class="badge"><%= @user_repo_data.count %> </span></a></li>
     <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Stars <span class="badge"><%= @user_stars.count %></span></a></li>
-    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Followers <span class="badge"><%= @user_followers_data.count %></span></a></li>
-    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Following <span class="badge">4</span></a></li>
+    <li role="presentation"><a href="#followers" aria-controls="followers" role="tab" data-toggle="tab">Followers <span class="badge"><%= @user_followers_data.count %></span></a></li>
+    <li role="presentation"><a href="#following" aria-controls="following" role="tab" data-toggle="tab">Following <span class="badge">4</span></a></li>
   </ul>
 
   <!-- Tab panes -->
@@ -33,13 +33,22 @@
       <% end %>
 
     </div>
-    <div role="tabpanel" class="tab-pane" id="settings">
+    <div role="tabpanel" class="tab-pane" id="followers">
       <% @user_followers_data.each do |follower| %>
         <img  src="<%= follower.avatar_url %>" style="width:60px;" >
         <h4> <%= link_to follower.login, follower.url %> </h4>
       <% end %>
     </div>
-    <div role="tabpanel" class="tab-pane" id="settings">Following</div>
+    <div role="tabpanel" class="tab-pane" id="following">
+      <% @user_following.each do |person_followed| %>
+        <img src = "<%= person_followed.picture %>" style="width:60px;" >
+        <h2> <%= link_to person_followed.name, person_followed.url %> </h2>
+        <h4> <%= person_followed.company %> </h4>
+        <h4> <%= person_followed.location %> </h4>
+
+      <% end %>
+
+    </div>
   </div>
 
 </div>
