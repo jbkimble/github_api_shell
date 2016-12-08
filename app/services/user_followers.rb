@@ -7,8 +7,8 @@ class UserFollowers
     @url = attributes[:html_url]
   end
 
-  def self.followers(username)
-    GitHubService.new("", username).get_followers.map do |raw_follower|
+  def self.followers(token)
+    GitHubService.new(token).get_followers.map do |raw_follower|
       UserFollowers.new(raw_follower)
     end
   end
