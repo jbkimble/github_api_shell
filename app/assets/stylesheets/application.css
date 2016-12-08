@@ -1,0 +1,57 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+/**= require bootstrap-theme.css
+*= require bootstrap.css*/
+
+.git_logo {
+  width: 50px;
+}
+
+.sign_in {
+  margin-top: 10px;
+  margin-right: 20px;
+}
+
+.search_box {
+  margin-right: 70px;
+}
+
+.top_fold {
+  background-image: url("https://enterprise.github.com/assets/aws/jetpack-octocat-airlock-b4e1d022c0113c997328f6598d16e58ad049140e50da4859d6b4d174890bb1c8.jpg");
+  background-repeat: no-repeat;
+  height: 1000px;
+  margin-top: -40px;
+  background-size: 100% auto;
+}
+
+.git_tabs {
+  margin-top: 50px;
+}
+
+.basic_info {
+  margin-left: 30px;
+}
+#page_text {
+  padding-top: 180px;
+  margin-left: 100px;
+  color:white;
+  width: 500px;
+}
+
+#user_pic {
+  width: 200px;
+  border-radius: 6px;
+}

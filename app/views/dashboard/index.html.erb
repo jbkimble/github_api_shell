@@ -1,0 +1,46 @@
+<div class='col-md-4 basic_info'>
+  <img id="user_pic", src = "<%= @user.picture %>" >
+  <h3> <%= @user.name %></h3>
+  <%= @user.username %>
+  <hr style="width:170px; padding-right:80px;">
+</div>
+
+<div>
+
+  <!-- Nav tabs -->
+<div class='col-md-6 git_tabs'>
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Overview  <span class="badge"> 4 </span></a></li>
+    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Repositories  <span class="badge"><%= @user_repo_data.count %> </span></a></li>
+    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Stars <span class="badge"><%= @user_stars.count %></span></a></li>
+    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Followers <span class="badge"><%= @user_followers_data.count %></span></a></li>
+    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Following <span class="badge">4</span></a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="home">Overview</div>
+    <div role="tabpanel" class="tab-pane" id="profile">
+      <% @user_repo_data.each do |repo_data| %>
+      <h3><%= link_to repo_data.name, repo_data.repo_url %> </h3>
+
+        <p><%= repo_data.language %></p>
+      <% end %>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="messages">
+      <% @user_stars.each do |star| %>
+        <h3> <%= link_to star.name, star.url %> </h3>
+      <% end %>
+
+    </div>
+    <div role="tabpanel" class="tab-pane" id="settings">
+      <% @user_followers_data.each do |follower| %>
+        <img  src="<%= follower.avatar_url %>" style="width:60px;" >
+        <h4> <%= link_to follower.login, follower.url %> </h4>
+      <% end %>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="settings">Following</div>
+  </div>
+
+</div>
+</div>
